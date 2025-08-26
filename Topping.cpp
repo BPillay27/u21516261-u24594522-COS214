@@ -3,14 +3,17 @@
 Topping::Topping()
 {
 }
+
 Topping::Topping(double price, std::string name) : PizzaComponent(price, name)
 {
 }
+
 std::string Topping::getName()
 {
-    return this->name;   
+    return PizzaComponent::getBaseName();
 }
+
 double Topping::getPrice()
 {
-    return this->price;
+    return PizzaComponent::getBasePrice();
 }
