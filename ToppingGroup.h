@@ -8,8 +8,7 @@
 class ToppingGroup : public PizzaComponent
 {
 public:
-    ToppingGroup(double price, std::string name);
-    ToppingGroup();
+    ToppingGroup(std::string name);
     ~ToppingGroup();
     void add(PizzaComponent *component);
     void remove(PizzaComponent *component);

@@ -6,8 +6,7 @@
 class Salami : public Topping
 {
 public:
-    Salami() : Topping() {}
-    Salami(double price, std::string name) : Topping(price, name) {}
+    Salami() : Topping(22.00, "Salami") {};
     ~Salami() = default;
 };
 #endif

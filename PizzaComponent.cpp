@@ -6,12 +6,6 @@ PizzaComponent::PizzaComponent(double price, std::string name)
     this->name = name;
 }
 
-std::string PizzaComponent::getBaseName()
-{
-    return name;
-}
-
-double PizzaComponent::getBasePrice()
-{
-    return price;
+PizzaComponent::~PizzaComponent(){
+    
 }

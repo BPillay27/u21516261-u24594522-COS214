@@ -1,11 +1,9 @@
 #include "ToppingGroup.h"
 
-ToppingGroup::ToppingGroup(double price, std::string name) : PizzaComponent(price, name)
-{
-}
 
-ToppingGroup::ToppingGroup() : PizzaComponent()
+ToppingGroup::ToppingGroup(std::string name) : PizzaComponent(0,name)
 {
+
 }
 
 ToppingGroup::~ToppingGroup()
@@ -28,15 +26,32 @@ void ToppingGroup::remove(PizzaComponent *component)
 {
     if (component == nullptr)
         return;
+
     toppings.remove(component);
+    delete component;
 }
 
 std::string ToppingGroup::getName()
 {
-    PizzaComponent::getBaseName();
+    std::string returner="";
+    returner+=this->name+" (";
+    for(std::list<PizzaComponent*>::iterator top=toppings.begin(); top!=toppings.end();++top){
+        returner+=(*top)->getName();
+        std::list<PizzaComponent*>::iterator next = top;
+        ++next;
+        if(next!=toppings.end()){
+            returner+=", ";
+        }
+    }   
+    returner+=")";
+    return returner;
 }
 
 double ToppingGroup::getPrice()
 {
-    PizzaComponent::getBasePrice();
+    double thePrice=0;
+    for(auto prices: toppings){
+        thePrice+=prices->getPrice();
+    }
+    return thePrice;
 }

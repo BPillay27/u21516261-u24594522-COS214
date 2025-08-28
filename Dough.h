@@ -6,8 +6,7 @@
 class Dough : public Topping
 {
 public:
-    Dough() : Topping() {}
-    Dough(double price, std::string name) : Topping(price, name) {}
+    Dough() : Topping(10.00,"Dough") {};
     ~Dough() = default;
 };
 #endif

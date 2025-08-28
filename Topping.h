@@ -7,8 +7,8 @@
 class Topping : public PizzaComponent
 {
 public:
-    Topping();
     Topping(double price, std::string name);
+    ~Topping();
     std::string getName();
     double getPrice();
 };

@@ -6,8 +6,7 @@
 class TomatoSauce : public Topping
 {
 public:
-    TomatoSauce() : Topping() {}
-    TomatoSauce(double price, std::string name) : Topping(price, name) {}
+    TomatoSauce():Topping(5.00,"Tomato Sauce") {};
     ~TomatoSauce() = default;
 };
 #endif
