@@ -19,6 +19,3 @@ BasePizza::~BasePizza()
     delete toppings;
     toppings = nullptr;
 }
-BasePizza::BasePizza() : Pizza()
-{
-}
