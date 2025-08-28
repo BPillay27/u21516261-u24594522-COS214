@@ -7,8 +7,10 @@
 class BeefSausage : public Topping
 {
 public:
+
     BeefSausage() : Topping(25.00, "Beef Sausage") {};
     ~BeefSausage() = default;
 };
 
 #endif
+

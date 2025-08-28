@@ -6,6 +6,7 @@
 class Salami : public Topping
 {
 public:
+
     Salami() : Topping(22.00, "Salami") {};
     ~Salami() = default;
 };
