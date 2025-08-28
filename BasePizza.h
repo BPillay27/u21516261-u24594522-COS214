@@ -12,7 +12,7 @@ public:
     std::string getName(); //done
     BasePizza(PizzaComponent *topping); //done
     ~BasePizza(); //tested
-    BasePizza(); //tested
+
 
 private:
     PizzaComponent *toppings;
