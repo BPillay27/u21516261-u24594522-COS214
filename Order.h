@@ -7,7 +7,8 @@
 //#include "StuffedCrust.h"
 
 class Order{
-
+    public:
+        void proceed(){};
 
 };
 
