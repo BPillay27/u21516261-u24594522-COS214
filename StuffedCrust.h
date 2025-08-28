@@ -9,8 +9,8 @@ class StuffedCrust : public PizzaDecorator
 public:
     StuffedCrust(Pizza *pizza);
     ~StuffedCrust();
-    std::string getName() { return "Stuffed Crust"; }
-    double getPrice() { return 20; }
+    std::string getName(); //Stuffed Crust
+    double getPrice();//20
 };
 
 #endif

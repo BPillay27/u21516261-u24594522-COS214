@@ -7,11 +7,11 @@
 class Pizza
 {
 public:
-    Pizza() = default;
-    virtual ~Pizza() = default;
-    virtual double getPrice() = 0;
-    virtual std::string getName() = 0;
-    virtual void printPizza();
+    Pizza() = default; // default
+    virtual ~Pizza() = default; //default
+    virtual double getPrice() = 0; //pure virtual
+    virtual std::string getName() = 0; // pure virtual
+    void printPizza(); //implemented
 };
 
 #endif

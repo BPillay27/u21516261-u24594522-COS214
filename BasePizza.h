@@ -8,11 +8,11 @@
 class BasePizza : public Pizza
 {
 public:
-    double getPrice();
-    std::string getName();
-    BasePizza(PizzaComponent *topping);
-    ~BasePizza();
-    BasePizza();
+    double getPrice(); //done
+    std::string getName(); //done
+    BasePizza(PizzaComponent *topping); //done
+    ~BasePizza(); //tested
+    BasePizza(); //tested
 
 private:
     PizzaComponent *toppings;

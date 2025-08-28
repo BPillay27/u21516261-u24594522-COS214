@@ -13,6 +13,11 @@
 #include "Dough.h"
 #include "Cheese.h"
 #include "BeefSausage.h"
+#include "BasePizza.h"
+#include "Pizza.h"
+#include "ExtraCheese.h"
+#include "StuffedCrust.h"
+#include "PizzaDecorator.h"
 
 int main(){
     PizzaComponent* Mushroom=new Mushrooms();
@@ -33,5 +38,16 @@ int main(){
     std::cout<<vegetarian.getName()<<" ,Price: R"<<vegetarian.getPrice()<<std::endl;
 
     //delete vegetarian;
+    std::cout<<"\n"<<"TESTING DECORATOR"<<"\n";
+    PizzaComponent* _Mushroom=new Mushrooms();
+    Pizza* piz=new BasePizza(_Mushroom); //fine
+    Pizza* _extra_cheese=new ExtraCheese(piz);
+    Pizza* _stuffed=new StuffedCrust(piz);
+    piz->printPizza();
+    _extra_cheese->printPizza();
+    _stuffed->printPizza();
+    delete piz; //fine
+    delete _extra_cheese;
+    delete _stuffed;
     return 0;
 }
