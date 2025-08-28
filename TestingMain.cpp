@@ -20,12 +20,15 @@ int main(){
     PizzaComponent* onions=new Onions();
     PizzaComponent* dough=new Dough();
     ToppingGroup vegetarian=ToppingGroup("Vegetarian");
+    PizzaComponent* m=vegetarian.clone();
+    ToppingGroup VegetarianDeluxe=ToppingGroup("Vegetarian Deluxe");
     vegetarian.add(Mushroom);
     vegetarian.add(Green);
     vegetarian.add(onions);
     vegetarian.add(dough);
     std::cout<<vegetarian.getName()<<" ,Price: R"<<vegetarian.getPrice()<<std::endl;
     vegetarian.remove(dough);
+    VegetarianDeluxe.add(m);
 
     std::cout<<vegetarian.getName()<<" ,Price: R"<<vegetarian.getPrice()<<std::endl;
 

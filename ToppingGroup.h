@@ -14,6 +14,8 @@ public:
     void remove(PizzaComponent *component);
     std::string getName();
     double getPrice();
+    ToppingGroup(const ToppingGroup &old);
+    PizzaComponent* clone();
 
 private:
     std::list<PizzaComponent*> toppings;

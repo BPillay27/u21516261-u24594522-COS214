@@ -11,5 +11,7 @@ public:
     ~Topping();
     std::string getName();
     double getPrice();
+    Topping(const Topping &old);
+    PizzaComponent* clone();
 };
 #endif

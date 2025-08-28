@@ -17,3 +17,11 @@ double Topping::getPrice()
 Topping::~Topping(){
 
 }
+
+Topping::Topping(const Topping &old):PizzaComponent(old){
+
+}
+
+PizzaComponent* Topping::clone(){
+    return new Topping(*this);
+}

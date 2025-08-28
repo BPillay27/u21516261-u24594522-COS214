@@ -10,7 +10,8 @@ class PizzaComponent
   friend class Topping;
     friend class ToppingGroup;
     virtual ~PizzaComponent();
-
+    PizzaComponent(const PizzaComponent &old);
+    virtual PizzaComponent* clone()=0;
 private:
     double price;
     std::string name;

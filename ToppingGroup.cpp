@@ -55,3 +55,13 @@ double ToppingGroup::getPrice()
     }
     return thePrice;
 }
+
+ToppingGroup::ToppingGroup(const ToppingGroup &old):PizzaComponent(old){
+    for(std::list<PizzaComponent*>::const_iterator top=old.toppings.begin(); top!=old.toppings.end();++top){
+        this->toppings.push_back((*top)->clone());
+    }
+}
+
+PizzaComponent* ToppingGroup::clone(){
+    return new ToppingGroup(*this);
+}

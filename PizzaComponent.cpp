@@ -10,3 +10,8 @@ PizzaComponent::~PizzaComponent(){
     
 }
 
+
+PizzaComponent::PizzaComponent(const PizzaComponent &old){
+    this->price=old.price;
+    this->name=old.name;
+}
