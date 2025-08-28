@@ -10,7 +10,6 @@
 #include "Pepperoni.h"
 #include "GreenPeppers.h"
 #include "FetaCheese.h"
-#include "Dough.h"
 #include "Cheese.h"
 #include "BeefSausage.h"
 #include "BasePizza.h"
@@ -23,7 +22,7 @@ int main(){
     PizzaComponent* Mushroom=new Mushrooms();
     PizzaComponent* Green=new GreenPeppers();
     PizzaComponent* onions=new Onions();
-    PizzaComponent* dough=new Dough();
+    PizzaComponent* dough=new Pepperoni();
     ToppingGroup vegetarian=ToppingGroup("Vegetarian");
     PizzaComponent* m=vegetarian.clone();
     ToppingGroup VegetarianDeluxe=ToppingGroup("Vegetarian Deluxe");
@@ -31,23 +30,24 @@ int main(){
     vegetarian.add(Green);
     vegetarian.add(onions);
     vegetarian.add(dough);
-    std::cout<<vegetarian.getName()<<" ,Price: R"<<vegetarian.getPrice()<<std::endl;
+    std::cout<<vegetarian.getName()<<" , Price: R"<<vegetarian.getPrice()<<std::endl;
     vegetarian.remove(dough);
     VegetarianDeluxe.add(m);
 
-    std::cout<<vegetarian.getName()<<" ,Price: R"<<vegetarian.getPrice()<<std::endl;
-
-    //delete vegetarian;
+    std::cout<<vegetarian.getName()<<" , Price: R"<<vegetarian.getPrice()<<std::endl;
+    
+    
     std::cout<<"\n"<<"TESTING DECORATOR"<<"\n";
     PizzaComponent* _Mushroom=new Mushrooms();
     Pizza* piz=new BasePizza(_Mushroom); //fine
     Pizza* _extra_cheese=new ExtraCheese(piz);
-    Pizza* _stuffed=new StuffedCrust(piz);
-    piz->printPizza();
+    Pizza* _stuffed=new StuffedCrust(_extra_cheese);
+    _stuffed->printPizza();
     _extra_cheese->printPizza();
     _stuffed->printPizza();
-    delete piz; //fine
-    delete _extra_cheese;
     delete _stuffed;
+    //deleted dough class and added the price in the base Pizza because all Pizza has dough.
+    
     return 0;
+    
 }
