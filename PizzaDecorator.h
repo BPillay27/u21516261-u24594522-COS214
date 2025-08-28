@@ -11,7 +11,7 @@ public:
     virtual ~PizzaDecorator();
     virtual std::string getName() = 0;
     virtual double getPrice() = 0;
-    void add(Pizza extra);
+    void add(Pizza* extra);
 
 private:
     Pizza *pizza;
