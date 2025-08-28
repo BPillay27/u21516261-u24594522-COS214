@@ -29,5 +29,5 @@ vt: $(Testing)
 	$(VAL) $(VGFLAGS) ./$(Testing) $(ARGS)
 
 clean:
-	rm -f *.o $(Testing)
+	rm -f *.o $(Testing) core*  vgcore*
 

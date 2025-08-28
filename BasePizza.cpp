@@ -1,7 +1,7 @@
 #include "BasePizza.h"
 double BasePizza::getPrice()
 {
-    return toppings->getPrice();
+    return toppings->getPrice()+10;//10 is for the dough
 }
 std::string BasePizza::getName()
 {

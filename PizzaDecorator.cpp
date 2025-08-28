@@ -1,6 +1,6 @@
 #include "PizzaDecorator.h"
 
-PizzaDecorator::PizzaDecorator(Pizza *pizza)
+PizzaDecorator::PizzaDecorator(Pizza* pizza)
 {
     if (pizza != nullptr)
     {

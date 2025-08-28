@@ -1,6 +1,6 @@
 #include "StuffedCrust.h"
 
-StuffedCrust::StuffedCrust(Pizza *pizza) : PizzaDecorator(pizza)
+StuffedCrust::StuffedCrust(Pizza* pizza) : PizzaDecorator(pizza)
 {
 }
 
@@ -11,10 +11,12 @@ StuffedCrust::~StuffedCrust()
 
 std::string StuffedCrust::getName()
 {
-    return "Stuffed Crust";
+    std::string returner="Stuffed Crust "+this->pizza->getName();
+    return returner;
 }
 
 double StuffedCrust::getPrice()
 {
-    return 20;
+    double total=20+this->pizza->getPrice();
+    return total;
 } 

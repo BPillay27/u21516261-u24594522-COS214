@@ -4,10 +4,14 @@
 #include "Pizza.h"
 #include <string>
 
+
+
 class PizzaDecorator : public Pizza
 {
+    friend class ExtraCheese;
+    friend class StuffedCrust;
 public:
-    PizzaDecorator(Pizza *pizza);
+    PizzaDecorator(Pizza* pizza);
     virtual ~PizzaDecorator();
     virtual std::string getName() = 0;
     virtual double getPrice() = 0;
