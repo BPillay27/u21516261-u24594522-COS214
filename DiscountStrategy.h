@@ -7,7 +7,7 @@ public:
     DiscountStrategy(double _price);
     virtual double applyDiscount() = 0;
     double getPrice();
-    virtual ~DiscountStrategy();
+    virtual ~DiscountStrategy()=default;
 private:
     double price;
 };
