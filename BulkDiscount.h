@@ -8,7 +8,7 @@ class BulkDiscount : public DiscountStrategy
 public:
     BulkDiscount(double _price);
     double applyDiscount();
-    ~BulkDiscount();
+    ~BulkDiscount()=default;
 };
 
 #endif
