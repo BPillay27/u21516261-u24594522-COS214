@@ -1,11 +1,10 @@
 #ifndef ORDER_H
 #define ORDER_H
 
-#include "Pizza.h"
 #include <list>
-#include "Pick.h"
 
-#include "Process.h"
+class Process;
+class Pizza;
 
 class Order{
 public: 

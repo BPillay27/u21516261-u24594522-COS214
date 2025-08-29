@@ -1,4 +1,6 @@
 #include "Pick.h"
+#include "Order.h"
+#include "Pay.h"
 
 Pick::Pick(Order *order) : Process(order)
 {

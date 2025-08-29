@@ -2,12 +2,8 @@
 #define PAY_H
 
 #include "Process.h"
-#include "Order.h"
-#include "DiscountStrategy.h"
-#include "Prepare.h"
-#include "BulkDiscount.h"
-#include "FamilyDiscount.h"
-#include "RegularPrice.h"
+class Order;
+class DiscountStrategy;
 
 class Pay : public Process{
     public:

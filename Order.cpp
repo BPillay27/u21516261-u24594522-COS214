@@ -1,4 +1,7 @@
 #include "Order.h"
+#include "Pizza.h"
+#include "Pick.h"
+#include "Process.h"
 
 void Order::next()
 {

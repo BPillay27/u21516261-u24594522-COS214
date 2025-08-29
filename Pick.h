@@ -2,8 +2,7 @@
 #define PICK_H
 
 #include "Process.h"
-#include "Order.h"
-#include "Pay.h"
+class Order;
 
 class Pick: public Process{
     public:

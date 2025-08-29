@@ -3,11 +3,11 @@
 
 #include <string>
 #include "Observer.h"
-//#include "Order.h"
+#include "Order.h"
 
 class Customer: public Observer{
     private:
-        //Order* order;
+        Order* order;
     public:
         Customer();
         ~Customer();

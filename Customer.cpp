@@ -25,5 +25,5 @@ void Customer::Proceed(){
     if(this->order==nullptr){
         return;
     }
-    this->order->proceed();
+    this->order->next();
 }
