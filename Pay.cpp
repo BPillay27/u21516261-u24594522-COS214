@@ -37,3 +37,9 @@ void Pay::approved()
 void Pay::total()
 {
 }
+
+Pay::~Pay()
+{
+     if(discount!=nullptr) delete discount;
+    discount=nullptr;
+}
