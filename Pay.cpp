@@ -8,19 +8,30 @@
 #include "FamilyDiscount.h"
 #include "RegularPrice.h"
 
-Pay::Pay(Order *order) : Process(order)
+Pay::Pay(Order* order) : Process(order)
 {
+    discount=nullptr;
 }
 
 void Pay::proceed()
 {
-    int decision = std::rand() % 2;
-    decision == 0 ? approved() : declined();
+    //std::cout<<" The decision"<<num1<<std::endl;
+    int decision = std::rand() % 4;
+    //std::cout<<" The decision"<<num2<<std::endl;
+    if(decision==1){
+        std::cout<<"The payment was declined maybe your balance is to low"<<std::endl;
+        std::cout<<"The total was: "<<applyDiscount()<<std::endl;
+        declined();
+    }else{
+        std::cout<<"The payment was approved"<<std::endl;
+        std::cout<<"The total was: R"<<applyDiscount()<<std::endl;
+        approved();
+    }
 }
 
 double Pay::applyDiscount()
 {
-    double total=getTotalPrice();
+    double total=this->total();
     if(order->getCount()>=5){
         discount=new BulkDiscount(total);
     } else{
@@ -43,8 +54,9 @@ void Pay::approved()
     order->setState(temp);
 }
 
-void Pay::total()
+double Pay::total()
 {
+    return order->getTotalPrice();
 }
 
 Pay::~Pay()

@@ -14,7 +14,7 @@ class Customer: public Observer{
         void update(std::string message);
         void makeOrder();
         void Proceed();
-        //
+        void addToOrder(Pizza* pizza);
 };
 
 #endif

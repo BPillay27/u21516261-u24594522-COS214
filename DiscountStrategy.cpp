@@ -2,9 +2,9 @@
 
 DiscountStrategy::DiscountStrategy(double _price)
 {
-    price=_price;
+    total=_price;
 }
 
 double DiscountStrategy::getPrice(){
-    return price;
+    return total;
 }

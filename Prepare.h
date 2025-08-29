@@ -10,7 +10,7 @@ class Prepare : public Process
     public:
     Prepare(Order* order);
     void proceed();
-    ~Prepare(){}
+    ~Prepare(){};
 };
 
 #endif

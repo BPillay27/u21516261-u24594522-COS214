@@ -11,8 +11,7 @@ COMMON_OBJS := $(COMMON_SRCS:.cpp=.o)
 
 #Valgrind settings
 VAL := valgrind
-VGFLAGS  := --leak-check=full --show-leak-kinds=all --track-origins=yes \
-            --errors-for-leak-kinds=all --error-exitcode=1
+VGFLAGS  := --leak-check=full --show-leak-kinds=all --track-origins=yes --errors-for-leak-kinds=all --error-exitcode=1 -s
 
 %.o: %.cpp
 	$(CX) $(CXX) $(CXXFLAGS) -c $<

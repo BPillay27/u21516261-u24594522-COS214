@@ -6,10 +6,11 @@ class DiscountStrategy
 public:
     DiscountStrategy(double _price);
     virtual double applyDiscount() = 0;
-    double getPrice();
     virtual ~DiscountStrategy()=default;
+protected:
+    double getPrice();
 private:
-    double price;
+    double total;
 };
 
 #endif

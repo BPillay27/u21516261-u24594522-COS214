@@ -12,7 +12,7 @@ class Pay : public Process{
     double applyDiscount();
     void declined();
     void approved();
-    void total();
+    double total();
     ~Pay();
 
     private:

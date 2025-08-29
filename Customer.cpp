@@ -27,3 +27,11 @@ void Customer::Proceed(){
     }
     this->order->next();
 }
+
+void Customer::addToOrder(Pizza* pizza){
+    if(this->order==nullptr){
+        return;
+    }else{
+        this->order->addPizza(pizza);
+    }
+}

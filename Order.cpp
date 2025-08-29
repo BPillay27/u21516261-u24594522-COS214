@@ -8,15 +8,16 @@ void Order::next()
     state->proceed();
 }
 
-bool Order::setState(Process *next)
+bool Order::setState(Process* next)
 {
     if (next == nullptr)
         return false;
 
     if (state != nullptr)
     {
-        delete state;
+        Process* holder=state;
         state = nullptr;
+        delete holder;
     }
 
     state = next;

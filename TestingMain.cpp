@@ -3,7 +3,6 @@
 #include "Topping.h"
 #include "ToppingGroup.h"
 #include "Salami.h"
-//#include "PizzaComponent.h"
 #include "Mushrooms.h"
 #include "Olives.h"
 #include "Onions.h"
@@ -21,6 +20,8 @@
 #include "Customer.h"
 #include "PizzaMenu.h"
 #include "Website.h"
+#include "Order.h"
+
 
 int main(){
     PizzaComponent* Mushroom=new Mushrooms();
@@ -89,8 +90,18 @@ int main(){
     myMenu.addPizza(another);
     myMenu.addPizza(result);
 
+    std::cout<<"\n\t Testing the state and strategy design patterns\n\t ****************\n";
+    Customer timmy=Customer();
     
+    Pizza* re=another->clone();
     
+    timmy.makeOrder();
+    timmy.addToOrder(another->clone());
+    timmy.addToOrder(re);
+    timmy.Proceed();
+    timmy.Proceed();
+    timmy.Proceed();
+    timmy.Proceed();
     //deleted dough class and added the price in the base Pizza because all Pizza has dough.
     delete t;
     delete c;

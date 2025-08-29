@@ -12,6 +12,8 @@ Pick::~Pick()
 
 void Pick::proceed()
 {
+    std::cout<<"Please pick your pizzas\n";
     Process* temp=new Pay(order);
     order->setState(temp);
 }
+

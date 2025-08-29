@@ -2,9 +2,11 @@
 #define ORDER_H
 
 #include <list>
+#include "Process.h"
+#include "Pizza.h"
 
-class Process;
-class Pizza;
+//class Process;
+//class Pizza;
 
 class Order{
 public: 
