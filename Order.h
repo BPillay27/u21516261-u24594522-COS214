@@ -1,15 +1,23 @@
-#ifndef ORDER_h
+#ifndef ORDER_H
 #define ORDER_H
 
-#include <iostream>
-//#include "ExtraCheese.h"
-//#include "BasePizza.h"
-//#include "StuffedCrust.h"
+#include "Pizza.h"
+#include <list>
+#include "Pick.h"
+
+#include "Process.h"
 
 class Order{
-    public:
-        void proceed(){};
-
+public: 
+    void next();
+    bool setState(Process* next);
+    bool addPizza(Pizza* ordering);
+    Order();
+    ~Order();
+private:
+    std::list<Pizza*> pizzas;
+    Process* state;
 };
 
-#endif ORDER_H
+#endif
+
