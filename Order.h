@@ -15,6 +15,7 @@ public:
     Order();
     ~Order();
     int getCount();
+    double getTotalPrice();
 private:
     std::list<Pizza*> pizzas;
     Process* state;
