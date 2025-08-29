@@ -8,6 +8,7 @@ class FamilyDiscount : public DiscountStrategy
 public:
     FamilyDiscount(double _price);
     double applyDiscount();
+    ~FamilyDiscount()=default;
 };
 
 #endif
