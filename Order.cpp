@@ -55,3 +55,13 @@ int Order::getCount(){
 
     return count;
 }
+
+double Order::getTotalPrice()
+{
+    double sum=0;
+    for(auto a:pizzas){
+        sum+=a->getPrice();
+    }
+
+    return sum;
+}
