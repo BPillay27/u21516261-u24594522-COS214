@@ -17,6 +17,7 @@ class Pay : public Process{
     void declined();
     void approved();
     void total();
+    ~Pay();
 
     private:
     DiscountStrategy* discount;
