@@ -13,7 +13,7 @@ class Pay : public Process{
     public:
     Pay(Order* order);
     void proceed();
-    double applyDiscount(double total);
+    double applyDiscount();
     void declined();
     void approved();
     void total();
