@@ -26,3 +26,7 @@ void PizzaDecorator::add(Pizza* extra){
         } 
     }
 }
+
+PizzaDecorator::PizzaDecorator(const PizzaDecorator &old):Pizza(old){  
+    this->pizza=old.pizza->clone();
+} 

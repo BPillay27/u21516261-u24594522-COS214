@@ -11,6 +11,8 @@ public:
     ~StuffedCrust();
     std::string getName(); //Stuffed Crust
     double getPrice();//20
+    Pizza* clone();
+    StuffedCrust(const StuffedCrust &old);
 };
 
 #endif

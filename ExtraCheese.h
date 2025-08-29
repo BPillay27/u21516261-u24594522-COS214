@@ -11,6 +11,8 @@ public:
     ~ExtraCheese();
     std::string getName();
     double getPrice();
+    Pizza* clone();
+    ExtraCheese(const ExtraCheese &old);
 };
 
 #endif

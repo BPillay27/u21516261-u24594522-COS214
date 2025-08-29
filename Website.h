@@ -4,11 +4,12 @@
 #include "Observer.h"
 #include <iostream>
 
-class website{
+class Website:public Observer {
 
     public:
-        website();
+        Website();
         void update(std::string message);
+        ~Website();
 };
 
 #endif

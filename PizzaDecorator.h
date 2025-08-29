@@ -16,7 +16,9 @@ public:
     virtual std::string getName() = 0;
     virtual double getPrice() = 0;
     void add(Pizza* extra);
-
+    //virtual Pizza* clone()=0;
+    PizzaDecorator(const PizzaDecorator &old);
+    virtual Pizza* clone()=0;
 private:
     Pizza *pizza;
 };

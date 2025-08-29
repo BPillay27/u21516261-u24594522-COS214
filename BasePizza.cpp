@@ -7,15 +7,26 @@ std::string BasePizza::getName()
 {
     return toppings->getName();
 }
-BasePizza::BasePizza(PizzaComponent *topping) : Pizza()
+BasePizza::BasePizza(PizzaComponent* topping): Pizza()
 {
     if (topping != nullptr)
     {
-        this->toppings = topping;
+        this->toppings= topping;
     }
 }
+
 BasePizza::~BasePizza()
 {
-    delete toppings;
+    if(toppings!=nullptr){
+        delete toppings;
+    }
     toppings = nullptr;
+}
+
+Pizza* BasePizza::clone(){
+    return new BasePizza(*this);
+}
+
+BasePizza::BasePizza(const BasePizza &old):Pizza(old){
+    this->toppings=old.toppings->clone();
 }

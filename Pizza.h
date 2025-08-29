@@ -12,6 +12,8 @@ public:
     virtual double getPrice() = 0; //pure virtual
     virtual std::string getName() = 0; // pure virtual
     void printPizza(); //implemented
+    virtual Pizza* clone()=0;
+    Pizza(const Pizza &old);
 };
 
 #endif
