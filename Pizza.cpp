@@ -4,3 +4,8 @@ void Pizza::printPizza()
 {
     std::cout << "Pizza : " << this->getName() << " Price (ZAR): " << this->getPrice() << "\n";
 }
+
+Pizza::Pizza(const Pizza &old){
+
+}
+

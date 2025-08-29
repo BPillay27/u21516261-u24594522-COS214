@@ -2,6 +2,7 @@
 
 StuffedCrust::StuffedCrust(Pizza* pizza) : PizzaDecorator(pizza)
 {
+
 }
 
 StuffedCrust::~StuffedCrust()
@@ -20,3 +21,11 @@ double StuffedCrust::getPrice()
     double total=20+this->pizza->getPrice();
     return total;
 } 
+
+Pizza* StuffedCrust::clone(){
+    return new StuffedCrust(*this);
+}
+
+StuffedCrust::StuffedCrust(const StuffedCrust &old):PizzaDecorator(old){
+
+}

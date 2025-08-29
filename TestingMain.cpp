@@ -17,6 +17,10 @@
 #include "ExtraCheese.h"
 #include "StuffedCrust.h"
 #include "PizzaDecorator.h"
+#include "SpecialMenu.h"
+#include "Customer.h"
+#include "PizzaMenu.h"
+#include "Website.h"
 
 int main(){
     PizzaComponent* Mushroom=new Mushrooms();
@@ -29,6 +33,7 @@ int main(){
     vegetarian.add(Mushroom);
     vegetarian.add(Green);
     vegetarian.add(onions);
+    vegetarian.add(nullptr);
     vegetarian.add(dough);
     std::cout<<vegetarian.getName()<<" , Price: R"<<vegetarian.getPrice()<<std::endl;
     vegetarian.remove(dough);
@@ -45,9 +50,51 @@ int main(){
     _stuffed->printPizza();
     _extra_cheese->printPizza();
     _stuffed->printPizza();
-    delete _stuffed;
-    //deleted dough class and added the price in the base Pizza because all Pizza has dough.
+    std::cout<<"\nTESTING the cloning for Pizza classes\n";
+    std::cout<<"\n The original\n";
+    _stuffed->printPizza();
+    std::cout<<"\n The clone\n";
+    Pizza* twoStuffed=_stuffed->clone();
+    twoStuffed->printPizza();
+    delete _stuffed;// cloning up to the Pizza class works
     
+    std::cout<<"\nTesting the Observers\n";
+    Observer* c=new Customer();
+    Observer* w=new Website();
+    Observer* t=new Customer();
+    c->update("Help");
+    w->update("More Help");
+    
+    std::cout<<"\nTesting the Menus\n";
+    ToppingGroup bigPizza=ToppingGroup("Meat lovers");
+    bigPizza.add(new Pepperoni());
+    bigPizza.add(new BeefSausage());
+    PizzaComponent* addition=bigPizza.clone();
+    Pizza* extras=twoStuffed->clone();
+    SpecialMenu special=SpecialMenu();
+    special.addObserver(c);
+    special.addObserver(w);
+    special.addObserver(t);
+    special.addPizza(twoStuffed);
+    special.addPizza(extras);
+    special.removePizza(extras);
+    Pizza* result=special.MenuIndex(1);
+    result->printPizza();
+    Pizza* another=new BasePizza(addition);
+    std::cout<<"\n Testing the PizzaMenu\n"<<std::endl;
+    PizzaMenu myMenu=PizzaMenu();
+    myMenu.addObserver(c);
+    myMenu.addObserver(w);
+    myMenu.addObserver(t);
+    myMenu.addPizza(another);
+    myMenu.addPizza(result);
+
+    
+    
+    //deleted dough class and added the price in the base Pizza because all Pizza has dough.
+    delete t;
+    delete c;
+    delete w;
     return 0;
     
 }

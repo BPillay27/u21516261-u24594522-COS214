@@ -12,10 +12,11 @@ public:
     std::string getName(); //done
     BasePizza(PizzaComponent *topping); //done
     ~BasePizza(); //tested
-
+    Pizza* clone();
+    BasePizza(const BasePizza &old);
 
 private:
-    PizzaComponent *toppings;
+    PizzaComponent* toppings;
 };
 
 #endif

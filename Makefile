@@ -17,8 +17,6 @@ VGFLAGS  := --leak-check=full --show-leak-kinds=all --track-origins=yes \
 %.o: %.cpp
 	$(CX) $(CXX) $(CXXFLAGS) -c $<
 
-:
-
 $(Testing): TestingMain.o $(COMMON_OBJS)
 	$(CX) $(CXX) $(CXXFLAGS) -o $@ $^
 
@@ -27,6 +25,9 @@ test: $(Testing)
 
 vt: $(Testing)
 	$(VAL) $(VGFLAGS) ./$(Testing) $(ARGS)
+
+gdb:$(Testing)
+	gdb ./$(Testing)
 
 clean:
 	rm -f *.o $(Testing) core*  vgcore*
