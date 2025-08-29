@@ -10,8 +10,9 @@ void Pay::proceed()
     decision == 0 ? approved() : declined();
 }
 
-double Pay::applyDiscount(double total)
+double Pay::applyDiscount()
 {
+    double total=getTotalPrice();
     if(order->getCount()>=5){
         discount=new BulkDiscount(total);
     } else{
