@@ -31,7 +31,7 @@ bool Order::addPizza(Pizza *ordering)
 
 Order::Order()
 {
-    state = new Pick();
+    state = new Pick(this);
 }
 
 Order::~Order()
@@ -45,4 +45,13 @@ Order::~Order()
 
     delete state;
     state = nullptr;
+}
+
+int Order::getCount(){
+    int count=0;
+    for(auto a:pizzas){
+        ++count;
+    }
+
+    return count;
 }

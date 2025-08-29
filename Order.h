@@ -14,10 +14,10 @@ public:
     bool addPizza(Pizza* ordering);
     Order();
     ~Order();
+    int getCount();
 private:
     std::list<Pizza*> pizzas;
     Process* state;
 };
 
 #endif
-
