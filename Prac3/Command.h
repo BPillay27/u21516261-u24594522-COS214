@@ -16,11 +16,11 @@ class Command {
         virtual ~Command();
 };
 
-class SendCommand: public Command {
+class SendMessageCommand: public Command {
     public:
-        SendCommand(Users* fromUser, std::string message, ChatRoom* room);
+        SendMessageCommand(Users* fromUser, std::string message, ChatRoom* room);
         void execute();
-        ~SendCommand();
+        ~SendMessageCommand();
 };
 
 class LogMessageCommand: public Command {

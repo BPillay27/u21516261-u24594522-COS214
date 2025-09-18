@@ -17,6 +17,7 @@ class Users {
         std::list<Command*> commandQueue;
         UserState* status;
         std::list<std::string> unreadMessages;
+        void setState(UserState* state);
 
     public:
         Users(std::string name);
@@ -24,18 +25,17 @@ class Users {
         void joinChatRoom(ChatRoom* chatroom);
         void leaveChatRoom(ChatRoom* chatroom);
         void send(std::string message, ChatRoom* room);
-        void receive(std::string message, Users fromUser, ChatRoom* room);
+        void receive(std::string message, Users* fromUser, ChatRoom* room);
         void addCommand(Command* command);
         void executeAll();
         void log();
         void setBusy();
-        void setState(UserState* state);
-        UserState* getState() const;
+        std::string getState() const;
         void addUnreadMessage(const std::string& message);
         std::string UserStatus() const;
         void printUnreadMessages();
-        bool IsInChatRoom(ChatRoom* room) const;
-        ~Users();
+        bool IsInChatRoom(ChatRoom* room) const; 
+        virtual ~Users();
 };
 
 class Byron: public Users {
