@@ -34,6 +34,7 @@ class Users {
         void addUnreadMessage(const std::string& message);
         std::string UserStatus() const;
         void printUnreadMessages();
+        bool IsInChatRoom(ChatRoom* room) const;
         ~Users();
 };
 
