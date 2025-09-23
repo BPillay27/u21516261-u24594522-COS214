@@ -17,11 +17,11 @@ class Users {
         std::list<Command*> commandQueue;
         UserState* status;
         std::list<std::string> unreadMessages;
-        void setState(UserState* state);
 
     public:
+        void setState(UserState* state);
         Users(std::string name);
-        std::string getName() const;
+        std::string getName();
         void joinChatRoom(ChatRoom* chatroom);
         void leaveChatRoom(ChatRoom* chatroom);
         void send(std::string message, ChatRoom* room);

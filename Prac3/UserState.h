@@ -7,6 +7,7 @@ class Users; // Forward declaration to avoid circular dependency
 class ChatRoom; // Forward declaration to avoid circular dependency
 class Command; // Forward declaration to avoid circular dependency
 class UserState {
+    
     protected:
         std::string stateName;
         Users* user;

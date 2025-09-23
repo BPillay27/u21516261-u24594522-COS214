@@ -51,7 +51,7 @@ void Users::setState(UserState* state){
     this->status=state;
 }
 
-std::string Users::getName() const{
+std::string Users::getName(){
     return this->name;
 }
 

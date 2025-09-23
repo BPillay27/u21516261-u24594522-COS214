@@ -1,10 +1,5 @@
 #include "Iterator.h"
 
-Iterator::~Iterator() {
-    // Destructor implementation
-    //Nothing
-}
-
 UserIterator::UserIterator(std::list<Users*>* list) {
     // Constructor implementation
     this->users = list;
@@ -14,42 +9,83 @@ UserIterator::UserIterator(std::list<Users*>* list) {
 }
 
 Users* UserIterator::first(){
-    // Return the first element
     return *this->start;
 }
+
 Users* UserIterator::next(){
-    // Move to the next element and return it
     if(this->current != this->end) {
         ++this->current;
     }
     if(this->current != this->end) {
         return *this->current;
     } else {
-        return nullptr; // or handle end of iteration as needed
+        return nullptr;
     }
 }
 
 bool UserIterator::isDone(){
-    // Check if the iteration is complete
     return this->current == this->end;
 }
 Users* UserIterator::currentItem(){
-    // Return the current element
     if(this->current != this->end) {
         return *this->current;
     } else {
-        return nullptr; // or handle end of iteration as needed
+        return nullptr; 
     }
 }
 
 void UserIterator::remove(){
-    // Remove the current element
     if(this->current != this->end) {
         this->current = this->users->erase(this->current);
     }
 }
 
 UserIterator::~UserIterator() {
-    // Destructor implementation
     users = nullptr;
+}
+
+ChatHistoryIterator::ChatHistoryIterator(std::vector<std::string>* history) {
+    this->history = history;
+    this->current = 0;
+}
+
+std::string ChatHistoryIterator::first(){
+    if(this->history->empty()) {
+        return "";
+    }
+    return (*this->history)[0];
+}
+
+std::string ChatHistoryIterator::next(){
+    ++this->current;
+    if(this->current < this->history->size()) {
+        return (*this->history)[this->current];
+    } else {
+        return "";
+    }
+}
+
+bool ChatHistoryIterator::isDone(){
+    return this->current >= this->history->size();
+}
+
+void ChatHistoryIterator::remove(){
+    if(this->current < this->history->size()) {
+        this->history->erase(this->history->begin() + this->current);
+        if(this->current >= this->history->size() && this->current > 0) {
+            --this->current;
+        }
+    }
+}
+
+std::string ChatHistoryIterator::currentItem(){
+    if(this->current < this->history->size()) {
+        return (*this->history)[this->current];
+    } else {
+        return "";
+    }
+}
+
+ChatHistoryIterator::~ChatHistoryIterator() {
+    history = nullptr;
 }
