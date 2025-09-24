@@ -61,8 +61,8 @@ void ChatRoom::displayChatHistory()
 
 CtrlCat::CtrlCat() : ChatRoom()
 {
-    this->chatHistory = new ChatHistory();
-    this->users = new UserList();
+    // this->chatHistory = new ChatHistory();
+    // this->users = new UserList();
 }
 
 void CtrlCat::registerUser(Users *user)
@@ -85,8 +85,8 @@ void Dogorithm::registerUser(Users *user)
 
 Dogorithm::Dogorithm() : ChatRoom()
 {
-    this->chatHistory = new ChatHistory();
-    this->users = new UserList();
+    // this->chatHistory = new ChatHistory();
+    // this->users = new UserList();
 }
 
 void Dogorithm::removeUser(Users *user)
@@ -96,8 +96,30 @@ void Dogorithm::removeUser(Users *user)
 }
 Dogorithm::~Dogorithm()
 {
+    if (this->chatHistory != nullptr)
+    {
+        delete this->chatHistory;
+        this->chatHistory = nullptr;
+    }
+
+    if (this->users != nullptr)
+    {
+        delete this->users;
+        this->users = nullptr;
+    }
 }
 
 CtrlCat::~CtrlCat()
 {
+    if (this->chatHistory != nullptr)
+    {
+        delete this->chatHistory;
+        this->chatHistory = nullptr;
+    }
+
+    if (this->users != nullptr)
+    {
+        delete this->users;
+        this->users = nullptr;
+    }
 }
