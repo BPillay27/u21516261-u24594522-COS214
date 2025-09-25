@@ -66,6 +66,8 @@ class ChatRoom {
  * 
  * @details CtrlCat inherits from its base class, ChatRoom, and has its own implementations of the pure virtual functions `void registerUser(Users* user)` and `void removeUser(Users* user)`
  * 
+ * @author Byron Pillay and Kiegan Lewis
+ * @date 2025-09-25
  * @ingroup ConcreteMediator
  * 
  */
@@ -83,7 +85,8 @@ class CtrlCat:public ChatRoom{
  * @brief `ChatRoom` for dog-related content
  * 
  * @details Dogorithm inherits from its base class, ChatRoom, and has its own implementations of the pure virtual functions `void registerUser(Users* user)` and `void removeUser(Users* user)`
- * 
+ * @author Byron Pillay and Kiegan Lewis
+ * @date 2025-09-25
  * @ingroup ConcreteMediator
  * 
  */

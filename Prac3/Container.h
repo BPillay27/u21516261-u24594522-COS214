@@ -6,12 +6,39 @@
 #include <string>
 class Users;
 
+/**
+ * @defgroup ConcreteAggregate
+ * @brief The concrete implementations of the Abstract Container class
+ */
+
+/**
+ * @defgroup Aggregate
+ * @brief The abstract base class for Concrete Aggregates to inherit from.
+ */
+
+/**
+ * @class Container
+ * @brief The container for an object.
+ * @details This is the abstract `Aggregate` class which `UserList` and `ChatHistory` will inherit from. Has pure virtual function `createIterator`.
+ * 
+ * @ingroup Aggregate
+ */
+
+
 class Container {
     public:
         virtual Iterator* createIterator()=0;
         Container(){};
         virtual ~Container(){};
 };
+
+/**
+ * @class UserList
+ * @brief This is a container for Users.
+ * 
+ * @details This is a container for `Users`. Its' implementation of `createIterator()` returns a `UserIterator` to step through a list of `Users`.
+ * @ingroup ConcreteAggregate
+ */
 
 class UserList: public Container {
     private:
@@ -23,6 +50,14 @@ class UserList: public Container {
         Iterator* createIterator() override;
         ~UserList();
 };
+
+/**
+ * @class ChatHistory
+ * @brief This is a container for a vector of strings.
+ * 
+ * @details This is a container for strings. Its' implementation of `createIterator()` returns a `ChatHistoryIterator` to step through a list of `ChatHistory`.
+ * @ingroup ConcreteAggregate
+ */
 
 class ChatHistory: public Container {
     private:

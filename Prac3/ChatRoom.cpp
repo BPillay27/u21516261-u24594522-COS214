@@ -90,8 +90,9 @@ void ChatRoom::saveMessage(std::string message, Users *fromUser)
 /**
  * @brief Prints the `chatHistory` to the console.
  *
- * @details 1. Creates a `ChatHistoryIterator` to step through `chatHistory`.
- * 2. For each `message` in `chatHistory`, prints the `message` to the console.
+ * @details 
+ * 1. Creates a `ChatHistoryIterator` to step through `chatHistory`. 
+ * 2. For each `message` in `chatHistory`, prints the `message` to the console. 
  * 3. Deletes the `ChatHistoryIterator` to free allocated memory.
  */
 
@@ -124,7 +125,6 @@ CtrlCat::CtrlCat() : ChatRoom()
  *
  * @param user This is the `Users` object to add to the `UserList`
  *
- * @warning Duplicate user entries are possible. The function does not check if a user is already a member of the chatRoom, so you could add a user twice leading to duplicates.
  */
 
 void CtrlCat::registerUser(Users *user)
@@ -159,7 +159,6 @@ void CtrlCat::removeUser(Users *user)
  *
  * @param user The user to be added to `UserList`.
  *
- * @warning Duplicate user entries are possible. The function does not check if a user is already a member of the chatRoom, so you could add a user twice leading to duplicates.
  */
 
 void Dogorithm::registerUser(Users *user)
