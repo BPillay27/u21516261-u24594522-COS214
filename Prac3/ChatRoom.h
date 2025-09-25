@@ -11,6 +11,27 @@ class ChatHistory;
 class UserList;
 class UserIterator;
 
+/**
+ * @defgroup Mediator Mediator Pattern
+ * @brief Classes that belong to the Mediator Design Pattern
+ *
+ * This group is the collection of all classes that are used by the Mediator design pattern. In the pattern, the following are the participants:
+ * ChatRoom is the Mediator, Dogorithm and CtrlCat are ConcreteMediators and Users is the Colleague.
+ */
+
+/**
+ * @class ChatRoom
+ *
+ * @brief Abstract base class for a chatroom of users. This class manages its own chat history and user list.
+ *
+ * @ingroup Mediator
+ *
+ * @details The ChatRoom is a Mediator (abstract) from which Concrete Mediators will inherit. Mediates communication between a group of Users.
+ *
+ * @author Byron Pillay and Kiegan Lewis
+ * @date 2025-09-25
+ */
+
 class ChatRoom {
     //friend class UserIterator; if there are issues with visibility, uncomment this line
     protected:
@@ -26,6 +47,29 @@ class ChatRoom {
         virtual ~ChatRoom();
 };
 
+/**
+ * @defgroup ConcreteMediator Concrete Mediators
+ * @brief Concrete subclasses of the abstract `Mediator` class (`ChatRoom`). 
+ * 
+ * @details This group contains all concrete mediators which inherit from the base class `ChatRoom`, which is the `Mediator`.
+ * 
+ * **Participants:**
+ * -`CtrlCat`: A Concrete Mediator for ChatRooms involving cats.
+ * -`Dogorith`: A Concrete Mediator for ChatRooms involving dogs.
+ * 
+ * @ingroup Mediator
+ */
+
+/**
+ * @class CtrlCat
+ * @brief `ChatRoom` for cat-related content
+ * 
+ * @details CtrlCat inherits from its base class, ChatRoom, and has its own implementations of the pure virtual functions `void registerUser(Users* user)` and `void removeUser(Users* user)`
+ * 
+ * @ingroup ConcreteMediator
+ * 
+ */
+
 class CtrlCat:public ChatRoom{
     public:
         CtrlCat();
@@ -33,6 +77,16 @@ class CtrlCat:public ChatRoom{
         void removeUser(Users* user) override;
         ~CtrlCat();
 };
+
+/**
+ * @class Dogorithm
+ * @brief `ChatRoom` for dog-related content
+ * 
+ * @details Dogorithm inherits from its base class, ChatRoom, and has its own implementations of the pure virtual functions `void registerUser(Users* user)` and `void removeUser(Users* user)`
+ * 
+ * @ingroup ConcreteMediator
+ * 
+ */
 
 class Dogorithm:public ChatRoom{
     public:
