@@ -6,6 +6,30 @@
 class Users; // Forward declaration to avoid circular dependency
 class ChatRoom; // Forward declaration to avoid circular dependency
 class Command; // Forward declaration to avoid circular dependency
+
+/**
+ * @defgroup State_Pattern
+ * @brief Collection of classes that participate in a State Design Pattern
+ */
+
+/**
+ * @defgroup States
+ * @brief Collection of Abtract state classes.
+ * @ingroup State_Pattern
+ */
+
+/**
+ * @defgroup Concrete_States
+ * @brief Collection of Concrete States which inherit from a State.
+ * @ingroup State_Pattern
+ */
+
+/**
+ * @class UserState
+ * @brief This is the Abstract state class from which Concrete states will be derived.
+ * @ingroup States
+ */
+
 class UserState {
     
     protected:
@@ -21,6 +45,12 @@ class UserState {
         virtual ~UserState();
 };
 
+/**
+ * @class Online
+ * @brief Class to represent when a `User` is online.
+ * @ingroup Concrete_States
+ */
+
 class Online: public UserState {
     public:
         Online(Users* user);
@@ -31,6 +61,12 @@ class Online: public UserState {
         ~Online();
 };
 
+/**
+ * @class Offline
+ * @brief Class to represent when a `User` is offline.
+ * @ingroup Concrete_States
+ */
+
 class Offline: public UserState {
     public:
         Offline(Users* user);
@@ -40,6 +76,12 @@ class Offline: public UserState {
         void setBusy();
         ~Offline();
 };
+
+/**
+ * @class Busy
+ * @brief Class to represent when a `User` is busy.
+ * @ingroup Concrete_States
+ */
 
 class Busy: public UserState {
     public:

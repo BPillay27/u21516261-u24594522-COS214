@@ -6,9 +6,15 @@
 class Users; // Forward declaration to avoid circular dependency
 
 /**
- * @defgroup Command Command Pattern
- * @brief Collection of classes that belong to the Command Pattern
+ * @defgroup Command_Pattern
+ * @brief This is a collection of classes that participate in the Command Design Pattern.
+ */
+
+/**
+ * @defgroup Commands
+ * @brief Collection of abstract classes that belong to the Command Pattern
  * @details The classes within this group are participants of a Command design pattern.
+ * @ingroup Command_Pattern
  */
 
 /**
@@ -17,7 +23,7 @@ class Users; // Forward declaration to avoid circular dependency
  * 
  * @author Byron Pillay and Kiegan Lewis
  * @date 2025-09-25
- * @ingroup Command
+ * @ingroup Commands
  */
 
 class Command {
@@ -32,14 +38,14 @@ class Command {
 };
 
 /**
- * @defgroup ConcreteCommand
+ * @defgroup Concrete_Commands
  * 
  * @details This group contains the Concrete Command participants of the Command Pattern.
  * **Participants:**
  * -`SendMessageCommand`: A concrete implementation of Command for handling sending messages.
  * -`LogMessageCommand`: A concrete implementation of Command for handling logging messages.
  * 
- * @ingroup Command
+ * @ingroup Command_Pattern
  * @brief Collection of Concrete Command participants
  */
 
@@ -49,7 +55,7 @@ class Command {
  * 
  * @author Byron Pillay and Kiegan Lewis
  * @date 2025-09-25
- * @ingroup ConcreteCommand
+ * @ingroup Concrete_Commands
  */
 
 class SendMessageCommand: public Command {
@@ -65,7 +71,7 @@ class SendMessageCommand: public Command {
  * 
  * @author Byron Pillay and Kiegan Lewis
  * @date 2025-09-25
- * @ingroup ConcreteCommand
+ * @ingroup Concrete_Commands
  */
 
 class LogMessageCommand: public Command {

@@ -7,19 +7,27 @@ class Users;
 #include <string>
 
 /**
- * @defgroup Iterator Iterator Pattern
- * @brief Collection of classes that participate in the Iterator design pattern
+ * @defgroup Iterator_Pattern
+ * @brief Collection of classes that participate in the Iterator Design Pattern.
  */
 
 /**
- * @defgroup Concrete 
+ * @defgroup Iterators
+ * @brief Collection of classes that participate in the Iterator design pattern
+ * @ingroup Iterator_Pattern
+ */
+
+/**
+ * @defgroup Concrete_Iterators
+ * @brief Collection of classes that provide a concrete implementation of an Iterator
+ * @ingroup Iterator_Pattern
  */
 
  /**
   * @class Iterator
   * @brief This is the abstract Iterator class
   * @details This is the abstract Iterator class which will be the base class for 
-  * @ingroup Iterator
+  * @ingroup Iterators
   */
 
 class Iterator {
@@ -30,15 +38,10 @@ class Iterator {
 };
 
 /**
- * @defgroup ConcreteIterators
- * @brief These are the concrete implementations of `Iterator`.
- */
-
-/**
  * @class UserIterator
  * @brief Class to iterate over a list of Users.
  * @details This class is responsible for providing an interface to step through a list of `Users` objects.
- * @ingroup ConcreteIterators
+ * @ingroup Concrete_Iterators
  */
 
 class UserIterator: public Iterator {
@@ -61,7 +64,7 @@ class UserIterator: public Iterator {
  * @class ChatHistoryIterator
  * @brief Class to iterate over a vector of strings.
  * @details This class is responsible for providing an interface to step through a vector of `message` strings from `Users`.
- * @ingroup ConcreteIterators
+ * @ingroup Concrete_Iterators
  */
 
 class ChatHistoryIterator: public Iterator {
