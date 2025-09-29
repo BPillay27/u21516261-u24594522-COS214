@@ -62,7 +62,6 @@ void ChatRoom::sendMessage(std::string message, Users *fromUser)
         iter->next();
     }
 
-    saveMessage(message, fromUser);
     delete iter;
 }
 
