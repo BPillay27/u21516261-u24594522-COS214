@@ -112,6 +112,9 @@ int main(){
     }
     delete chatIt;
     //... The iterators work and containers work. and Don't touch them >:)
+    dogorithm->displayChatHistory();
+    std::cout<<"Cat chatroomm timne:"<<std::endl;
+    ctrlcat->displayChatHistory();
 
 
 

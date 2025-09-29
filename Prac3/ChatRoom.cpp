@@ -82,7 +82,7 @@ void ChatRoom::saveMessage(std::string message, Users *fromUser)
 {
     if (message != "" && fromUser != nullptr && fromUser->IsInChatRoom(this))
     {
-        chatHistory->add(message);
+        chatHistory->add(fromUser->getName()+" : "+message);
     }
 }
 

@@ -31,3 +31,8 @@ gdb:$(Testing)
 clean:
 	rm -f *.o $(Testing) core*  vgcore*
 
+zip: 
+	zip u24594522_u21516261.zip *
+
+rz: u24594522_u21516261.zip
+	rm -f u24594522_u21516261.zip
