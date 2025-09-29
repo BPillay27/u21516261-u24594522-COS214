@@ -146,8 +146,12 @@ void CtrlCat::registerUser(Users *user)
 
 void CtrlCat::removeUser(Users *user)
 {
+    if(user->IsInChatRoom(this) == false) {
+        return;
+    }
     this->chatHistory->add(user->getName() + " has left the CtrlCat room.");
     this->users->removeUser(user);
+    user->leaveChatRoom(this);
 }
 
 /**
@@ -186,8 +190,12 @@ Dogorithm::Dogorithm() : ChatRoom()
 
 void Dogorithm::removeUser(Users *user)
 {
+    if(user->IsInChatRoom(this) == false) {
+        return;
+    }
     this->chatHistory->add(user->getName() + " has left the Dogorithm room.");
     this->users->removeUser(user);
+    user->leaveChatRoom(this);
 }
 
 /**

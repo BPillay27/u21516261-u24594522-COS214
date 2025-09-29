@@ -115,7 +115,13 @@ int main(){
     dogorithm->displayChatHistory();
     std::cout<<"Cat chatroomm timne:"<<std::endl;
     ctrlcat->displayChatHistory();
-
+    ctrlcat->removeUser(byron);
+    ctrlcat->removeUser(byron); 
+    ctrlcat->displayChatHistory();
+    ctrlcat->removeUser(bob);
+    dogorithm->removeUser(kiegan);
+    dogorithm->removeUser(kiegan);
+    dogorithm->displayChatHistory();
 
 
     delete chatHistory;
