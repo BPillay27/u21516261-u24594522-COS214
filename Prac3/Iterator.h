@@ -46,9 +46,21 @@ class Iterator {
 
 class UserIterator: public Iterator {
     private:
+        /**
+         * @brief List of `Users` in the `Iterator`.
+         */
         std::list<Users*>* users;
+        /**
+         * @brief The current item in `users` which the `Iterator` is referring to.
+         */
         std::list<Users*>::iterator current;
+        /**
+         * @brief The 1st item in `users`.
+         */
         std::list<Users*>::iterator start;
+        /**
+         * @brief The last item in `users`.
+         */
         std::list<Users*>::iterator end;
     public:
         UserIterator(std::list<Users*>* list);
@@ -69,8 +81,14 @@ class UserIterator: public Iterator {
 
 class ChatHistoryIterator: public Iterator {
     private:
-        std::vector<std::string>* history;                      
-        int current;             
+        /**
+         * @brief The vector of strings that represent the Chat History.  
+         */
+        std::vector<std::string>* history;
+        /**
+         * @brief The string item the Iterator is currently pointing to.
+         */            
+        int current;        
     public:
         ChatHistoryIterator(std::vector<std::string>* history); 
         std::string first();        

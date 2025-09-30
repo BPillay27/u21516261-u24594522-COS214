@@ -44,6 +44,9 @@ class Container {
 
 class UserList: public Container {
     private:
+        /**
+         * @brief The list of `Users` objects managed by the container.
+         */
         std::list<Users*> users;
     public:
         UserList();
@@ -63,6 +66,9 @@ class UserList: public Container {
 
 class ChatHistory: public Container {
     private:
+        /**
+         * @brief The vetcor of string `message` objects which were sent to a `ChatRoom`.
+         */
         std::vector<std::string> history;
     public:
         ChatHistory();

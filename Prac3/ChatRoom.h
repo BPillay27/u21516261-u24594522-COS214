@@ -41,8 +41,16 @@ class UserIterator;
 class ChatRoom {
     //friend class UserIterator; if there are issues with visibility, uncomment this line
     protected:
+        /**
+         * @brief Stores the history of messages sent to this `ChatRoom`.
+         */
         ChatHistory* chatHistory;
-        UserList* users;
+
+        /**
+         * @brief List of `Users` that are members of this `ChatRoom`.
+         */
+        
+        UserList* users;    
     public:
         ChatRoom();
         virtual void registerUser(Users* user)=0;
