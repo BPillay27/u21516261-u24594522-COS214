@@ -28,8 +28,17 @@ class Users; // Forward declaration to avoid circular dependency
 
 class Command {
     protected:
+        /**
+         * @brief The `User` which sent the message.
+         */
         Users* fromUser;
+        /**
+         * @brief The `message` string sent by `fromUser`.
+         */    
         std::string message;
+        /**
+         * @brief The `ChatRoom` which `fromUser` sent the `message` to.
+         */
         ChatRoom* room;
     public:
         Command(Users* fromUser, std::string message, ChatRoom* room);

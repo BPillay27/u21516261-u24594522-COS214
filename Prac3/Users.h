@@ -30,10 +30,25 @@ class Command;  // Forward declaration to avoid circular dependency
  */
 class Users {
     protected:
+        /**
+        * @brief The name of the `User`.
+        */
         std::string name;
+        /**
+         * @brief The various `ChatRooms` the `User` is a member of.
+         */
         vector<ChatRoom*> chatrooms;
+        /**
+         * @brief This is a queue of `Commands` which will be executed in FIFO.
+         */
         std::list<Command*> commandQueue;
+        /**
+         * @brief The status of the User. Can be Online, Offline or Busy. Determines behaviour of sending/receiving messages.
+         */
         UserState* status;
+        /**
+         * @brief List of unread messages. These are messages received while Offline or Busy.
+         */
         std::list<std::string> unreadMessages;
 
     public:

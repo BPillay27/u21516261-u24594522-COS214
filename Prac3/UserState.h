@@ -33,8 +33,14 @@ class Command; // Forward declaration to avoid circular dependency
 class UserState {
     
     protected:
+        /**
+        * @brief The State of the User. E.g: Online, Offline or Busy.
+        */
         std::string stateName;
-        Users* user;
+        /**
+         * @brief The Current user.
+         */
+        Users* user; 
     public:
         UserState(Users* user, std::string stateName);
         std::string getStateName() const;
